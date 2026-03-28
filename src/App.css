@@ -1,3 +1,52 @@
+.top-menu-toggle {
+  margin-left: 24px;
+  font-size: 1rem;
+  color: #4b5563;
+  background: #f3f4f6;
+  border-radius: 16px;
+  padding: 6px 18px;
+  transition: background 0.2s, color 0.2s;
+  user-select: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.portfolio-app.dark .top-menu-toggle {
+  background: #23272f;
+  color: #b0b0b0;
+  border: 1px solid #444b5a;
+}
+/* Top menu for view switching */
+.top-menu {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 32px 0 24px 0;
+}
+.top-menu-btn {
+  background: #f3f4f6;
+  color: #23272f;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 28px;
+  font-size: 1.08rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.top-menu-btn.active, .top-menu-btn:hover {
+  background: #2563eb;
+  color: #fff;
+}
+.portfolio-app.dark .top-menu-btn {
+  background: #444b5a;
+  color: #61dafb;
+}
+.portfolio-app.dark .top-menu-btn.active, .portfolio-app.dark .top-menu-btn:hover {
+  background: #2563eb;
+  color: #fff;
+}
 .skills-section {
   width: 100%;
   margin: 14px 0 0 0;
