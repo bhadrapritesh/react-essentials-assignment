@@ -130,7 +130,7 @@ function MovieCard({ movie, isFavourite, onToggle }) {
   );
 }
 
-function MovieExplorer() {
+function MovieExplorer({ theme = 'light', onToggleTheme }) {
   const [query, setQuery] = useState('star');
   const [favourites, setFavourites] = useState([1, 3]);
 
@@ -163,7 +163,7 @@ function MovieExplorer() {
   };
 
   return (
-    <section className="movie-explorer-shell">
+    <section className={`movie-explorer-shell ${theme === 'dark' ? 'dark' : ''}`}>
       <div className="movie-explorer">
         <header className="movie-header">
           <div>
@@ -173,7 +173,18 @@ function MovieExplorer() {
               React component structure.
             </p>
           </div>
-          <p className="movie-status">Local data &middot; React state ready</p>
+          <div className="movie-header-actions">
+            <p className="movie-status">Local data &middot; React state ready</p>
+            {typeof onToggleTheme === 'function' && (
+              <button
+                type="button"
+                className="movie-theme-toggle"
+                onClick={onToggleTheme}
+              >
+                {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+              </button>
+            )}
+          </div>
         </header>
 
         <div className="movie-search-panel">
